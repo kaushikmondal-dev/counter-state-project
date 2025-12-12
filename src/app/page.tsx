@@ -1,17 +1,45 @@
+import { Button } from "@/components/shadcnui/button";
+import {
+	Card,
+	CardContent,
+	CardHeader,
+	CardTitle,
+} from "@/components/shadcnui/card";
+import { CircleMinus, CirclePlus } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Nextjs Starter Frontend",
-	description: "Production grade Next.js starter template",
+	title: "Basic | Counter State Project",
+	description: "Basic page of Counter State Project",
 };
 
 const page = () => {
 	return (
 		<section className="grid h-[90dvh] place-items-center">
-			<div className="space-y-2 text-center">
-				<h1 className="text-5xl font-semibold">Nextjs Starter Frontend</h1>
-				<h2 className="text-3xl">Production grade Next.js starter template</h2>
-			</div>
+			<Card className="w-xs">
+				<CardHeader>
+					<CardTitle className="text-center font-black">
+						Basic Counter App
+					</CardTitle>
+				</CardHeader>
+				<CardContent className="text-center">
+					<div>Counter Value 0</div>
+					<div className="grid grid-cols-2 gap-4 pt-4">
+						<Button
+							className="px-4"
+							variant={"destructive"}>
+							<CircleMinus />
+							Minus 1
+						</Button>
+						<Button
+							className="px-4"
+							variant={"default"}>
+							<CirclePlus />
+							Plus 1
+						</Button>
+					</div>
+				</CardContent>
+			</Card>
 		</section>
 	);
 };
