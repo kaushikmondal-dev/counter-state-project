@@ -8,7 +8,7 @@ import { CardContent } from "./shadcnui/card";
 const BasicCounter = () => {
 	//let count = 10;
 
-	const [count, setCount] = useState(10);
+	const [count, setCount] = useState(0);
 
 	const plus = () => {
 		//count = count + 1;

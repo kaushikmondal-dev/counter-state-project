@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Button } from "./shadcnui/button";
 import { CardContent } from "./shadcnui/card";
 
-const AdvancedCounter = () => {
+const ExpertCounter = () => {
 	const [count, setCount] = useState(0);
 
 	const plus = () => {
@@ -26,7 +26,6 @@ const AdvancedCounter = () => {
 		//count = count - 1;
 		setCount(count - 10);
 	};
-
 	return (
 		<CardContent className="text-center">
 			<div>Counter Value {count}</div>
@@ -64,4 +63,4 @@ const AdvancedCounter = () => {
 	);
 };
 
-export default AdvancedCounter;
+export default ExpertCounter;
