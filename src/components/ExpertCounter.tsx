@@ -9,22 +9,26 @@ const ExpertCounter = () => {
 	const [count, setCount] = useState(0);
 
 	const plus = () => {
-		//count = count + 1;
-		setCount(count + 1);
+		if (count <= 99) {
+			setCount(count + 1);
+		}
 	};
 
 	const minus = () => {
-		//count = count - 1;
-		setCount(count - 1);
+		if (count >= 1) {
+			setCount(count - 1);
+		}
 	};
 	const plusTen = () => {
-		//count = count + 1;
-		setCount(count + 10);
+		if (count <= 90) {
+			setCount(count + 10);
+		}
 	};
 
 	const minusTen = () => {
-		//count = count - 1;
-		setCount(count - 10);
+		if (count >= 10) {
+			setCount(count - 10);
+		}
 	};
 	return (
 		<CardContent className="text-center">
@@ -33,28 +37,32 @@ const ExpertCounter = () => {
 				<Button
 					onClick={minus}
 					className="cursor-pointer px-4"
-					variant={"destructive"}>
+					variant={"destructive"}
+					disabled={count <= 0}>
 					<CircleMinusIcon />
 					Minus 1
 				</Button>
 				<Button
 					onClick={plus}
 					className="cursor-pointer px-4"
-					variant={"default"}>
+					variant={"default"}
+					disabled={count >= 100}>
 					<CirclePlusIcon />
 					Plus 1
 				</Button>
 				<Button
 					onClick={minusTen}
 					className="cursor-pointer px-4"
-					variant={"destructive"}>
+					variant={"destructive"}
+					disabled={count <= 9}>
 					<CircleMinusIcon />
 					Minus 10
 				</Button>
 				<Button
 					onClick={plusTen}
 					className="cursor-pointer px-4"
-					variant={"default"}>
+					variant={"default"}
+					disabled={count >= 91}>
 					<CirclePlusIcon />
 					Plus 10
 				</Button>
